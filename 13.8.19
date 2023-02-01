@@ -1,0 +1,31 @@
+bilet = 0
+while True:
+    try:
+     bilet = int(input("Колличество билетов  "))
+    except ValueError:
+      print("ВВедите цифры")
+      continue
+    else:
+     break
+person = bilet
+sum = 0
+while person !=0:
+    age_person = int(input(f'Возраст участника {person} '))
+    if age_person < 18:
+        print(('Бесплатно'))
+    elif 25 > age_person >= 18:
+        sum += 990
+        print('Цена 990 руб')
+    elif 100 > age_person >= 25:
+        sum += 1390
+        print('Цена 1390 руб')
+    else:
+        print('Вам не может быть столько лет)')
+        continue
+    person -= 1
+
+if  bilet > 3:
+    cashback = sum - ((sum/100)*10)
+    print(f'Сумма с учетом скидки {cashback}')
+else:
+    print(f'Сумма к оплате {sum}')
